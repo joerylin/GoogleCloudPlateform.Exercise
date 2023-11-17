@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "surveycake-twm",
+  "private_key_id": "1f6e0a95a70749d201d992acce58aec322d07265",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC8e3O6X17fVxWE\ns6IVCb4b900a5ln7e/qxaLh/KRPTXCFEC1yY4FdJ0D0Clfn00LDPkRQa/frA2Iqv\nKmbxS0+BGCafcGCUHghzsSFbI54LbrmOc+abCKA5QiRXcztHi6PhVtg6Yvv5D1Ci\ntgjgrGDLk8WGLKAaJPPvMXXz4P1wVylb6snGfmWVbIbtIQSecc/G2qLKZ212IWGH\nnz8Gj2ZIg0Bbf9gS34Fx9ihVHPclWvrPRAvp17sWXjtFJeeigdhaQJMdoNrLCg+n\neoBS2E8P6DmMQzlXmRbkaQpGm86G7Dn/bJLayvElgz0bGx9Bio66se+rld0vjqmA\nuBfoYALjAgMBAAECggEADvU5JPRGojDWC1b6KPNB/BQvMVBQmc2oAoZOBgFril2I\nYk8IhTVgmAIHpXnjgVNChOZ9kvrO+Jj2wJn723Bfmd4hyotvjrGneA75l7MG6t9Z\nqH14MpuHo6OlIK+LZ80kL1DmDhQm7QgTHSaXI8VqVR2gElreRdTi6vug4b7cPhr5\nhEt+h84rF4LXqIC/Kr261VCONA+KALn0wsVtF3V3GcOlDO89ezrNirxtKWGng1XY\nI7zMck5oryV4wXXyJVvxhN9LZckMbRZ3o+7mqQs4NVsUZApiKOauYcExbXrPSYei\n57w4+jvamVuuNJE2IwY9NBktx8E1qoJE/dRhy+G/2QKBgQD7oRhkoJHX02bKfWVb\n5yq9KnGp/rc7aG/y7gSQY+mmtc9o3OGMU5bgiyPW2yjt9StNbjrxQR7yaccH6/Ww\nfxJdFGTdrV3DKrYUk3fI7MmweOhstkh7Vv9BxELYZK8+ELTBtg+pNGhaWNBtE5Pg\nl0XmgIVDPyAiU7ymJttIfBt/ZwKBgQC/wZCLrHXvelwDP7jrPTbAjo9KLWe9FzHg\nKr+ndGa3r7TV139p5ZBa7oBrRx3hEsiVoDCFdtGK7F+vC3uLGE6bkjWsCIfkrO8X\nKe/JRMoXTScwjWOfeJw6/gKyg44evm2XhhiCXHaIK6HzgXppn6rHtldOHnHSGuBD\nPEMcSyn/JQKBgF2cX9PHvJobRmlcXyHijQ7UxHZmkUojn0oz7DS/RsRDbQbo7Wvk\nCQQ+HzYmUEK+a76hnIH2JQov+eBjkwJ3M6C3HpMtlO0vbY+YEP8JwDrLsEQJSEvC\nYLHZzrhsNJmVY3mRPqBHI+9AjUGW//OUs2d+NpV+3XiHyG3TlM6RhTVPAoGAfhM1\nBzBXxiFL9/LgkQIJSqcwfNPHniJu73UL13yHwIOswOBT7Hs74x1mn6H9eisQaJgO\n7uFFOjLZYkyJaNWNcWm7EiX1uxscg71V453vxUw71QdRFduF1J+HhHlMathHU9Wd\nrbA/Wp5dd62Mn3+UGITBeCI6MarsAijP8v1UWmUCgYAVSPwSBHN9SDKBvNCw2NX6\nbwOd9HiWloMiilriL9TYhBaW/mVMyTLiyK3lNRdxJ1jKmnIlwT+UDO/nbI5nhjBb\nd2jZT/mGMomUcdJSKZjWU1CghzvEinPC+7mhRrw84R5aRFLx1aqQp9nvguz1MYeo\ngDu4bIu5mVS+X3KLfvXr7Q==\n-----END PRIVATE KEY-----\n",
+  "client_email": "at-storage-twm-it@surveycake-twm.iam.gserviceaccount.com",
+  "client_id": "105675553707589683417",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/at-storage-twm-it%40surveycake-twm.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

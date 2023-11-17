@@ -1,0 +1,15 @@
+D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\bin\Debug\net6.0\GoogleCredential\rational-genius-400902-2e11dab77a87.json
+D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\bin\Debug\net6.0\GCP.SERVICE.deps.json
+D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\bin\Debug\net6.0\GCP.SERVICE.dll
+D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\bin\Debug\net6.0\GCP.SERVICE.pdb
+D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\bin\Debug\net6.0\CommonLibrary.dll
+D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\obj\Debug\net6.0\GCP.SERVICE.csproj.AssemblyReference.cache
+D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\obj\Debug\net6.0\GCP.SERVICE.GeneratedMSBuildEditorConfig.editorconfig
+D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\obj\Debug\net6.0\GCP.SERVICE.AssemblyInfoInputs.cache
+D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\obj\Debug\net6.0\GCP.SERVICE.AssemblyInfo.cs
+D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\obj\Debug\net6.0\GCP.SERVICE.csproj.CoreCompileInputs.cache
+D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\obj\Debug\net6.0\GCP.SERVICE.csproj.CopyComplete
+D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\obj\Debug\net6.0\GCP.SERVICE.dll
+D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\obj\Debug\net6.0\refint\GCP.SERVICE.dll
+D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\obj\Debug\net6.0\GCP.SERVICE.pdb
+D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\obj\Debug\net6.0\ref\GCP.SERVICE.dll

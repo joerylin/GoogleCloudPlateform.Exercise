@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "dgSpecHash": "rUmrQJiEreSX0RbdwfRCV70VrXpnExkyERg85/we/++7RHxTVwEBFmGymx5a2i7dHVetp6b6Q4iCBw+WD6mPwQ==",
+  "success": true,
+  "projectFilePath": "D:\\_Exercise\\GoogleCloudPlateform.Exercise\\GCPAPI_TEST\\GCPAPI_TEST.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Joery\\.nuget\\packages\\google.api.gax\\4.4.0\\google.api.gax.4.4.0.nupkg.sha512",
+    "C:\\Users\\Joery\\.nuget\\packages\\google.api.gax.rest\\4.4.0\\google.api.gax.rest.4.4.0.nupkg.sha512",
+    "C:\\Users\\Joery\\.nuget\\packages\\google.apis\\1.60.0\\google.apis.1.60.0.nupkg.sha512",
+    "C:\\Users\\Joery\\.nuget\\packages\\google.apis.auth\\1.60.0\\google.apis.auth.1.60.0.nupkg.sha512",
+    "C:\\Users\\Joery\\.nuget\\packages\\google.apis.core\\1.60.0\\google.apis.core.1.60.0.nupkg.sha512",
+    "C:\\Users\\Joery\\.nuget\\packages\\google.apis.storage.v1\\1.60.0.2981\\google.apis.storage.v1.1.60.0.2981.nupkg.sha512",
+    "C:\\Users\\Joery\\.nuget\\packages\\google.cloud.storage.v1\\4.6.0\\google.cloud.storage.v1.4.6.0.nupkg.sha512",
+    "C:\\Users\\Joery\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "C:\\Users\\Joery\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Joery\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
