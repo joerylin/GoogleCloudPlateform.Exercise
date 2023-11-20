@@ -11,21 +11,21 @@ namespace GCPAPI_TEST
 	{
 		//-- JOERY TEST 
 		//static String bucketName = "test_bucket_joery";
-		//static String credentialPath = "D:\\_WorkProject\\TWM\\112_Survey\\01_DOC\\rational-genius-400902-2e11dab77a87.json";
+		//static String credentialPath = @"GoogleCredential\rational-genius-400902-2e11dab77a87.json";
 
 		//-- TWM 
 		static String bucketName = "at-twm-svy-do-automation";
-		static String credentialPath = "GoogleCredential\\surveycake-twm-1f6e0a95a707.json";
+		static String credentialPath = @"GoogleCredential\surveycake-twm-1f6e0a95a707.json";
 
 
 		static String gcpPath, localPath;
 		static GCPBase gcpService = new GoogleCloudStorageService();
-		
+
 		static void Main(string[] args)
 		{
 			Console.WriteLine("TEST START");
 			//DownLoadFile_1();
-			//UpLoadFile();
+			//UpLoadFile2();
 			// gcpService = new GoogleCloudStorageService();
 			gcpService.SetGCPService(bucketName, credentialPath);
 			ConsoleWrite.ConsoleWriteTip("***** START... *****");
@@ -33,15 +33,23 @@ namespace GCPAPI_TEST
 			localPath = @"D:\TEST\unfinished_list_csv\";
 			gcpPath = @"automation/bs/storage/twm/unfinished_list/csv/";
 
+			//gcpService.PullFile("automation/bs/storage/twm/unfinished_list/csv/test_20231116153322.jry", "D:\\TEST\\pull_from_gcp\\test_20231116153322.jry");
+
+			//gcpService.PushFile($"{gcpPath}LrWLP_20231115170533.csv", $"{localPath}LrWLP_20231115170533.csv");
+			//gcpService.PushFile($"{gcpPath}LrWLP_20231117094733.csv", $"{localPath}LrWLP_20231117094733.csv");
+			//gcpService.PushFile($"{gcpPath}LrWLP_20231117104733.csv", $"{localPath}LrWLP_20231117104733.csv");
+
+			//gcpService.PushFile($"{gcpPath}eLGk6_20231107193807.csv", $"{localPath}eLGk6_20231107193807.csv");
+			//gcpService.PushFile($"{gcpPath}eLGk6_20231107233807.csv", $"{localPath}eLGk6_20231107233807.csv");
 			// ListFile(gcpPath);
 			//TEST1();
-			gcpPath = null;
+			//gcpPath = null;
 			List<Object> list = gcpService.GetResultObjects(gcpPath, "", "csv");
 			ConsoleWrite.ConsoleWriteTip($" 列出 \"\" 數量 = {list.Count}");
 			foreach (var item in list)
 			{
-				ConsoleWrite.ConsoleWriteInfo($"TYPE={item.GetType} \\t NAME={item.Name} \\t  SIZE={item.Size}");
-				
+				ConsoleWrite.ConsoleWriteInfo($" NAME={item.Name} \t  SIZE={item.Size}");
+
 				//下載
 				//gcpService.PullFile(item.Name, $"{localPath}{gcpService.getObjectFilename(item.Name)}");
 			}
@@ -87,7 +95,7 @@ namespace GCPAPI_TEST
 			string bucketName = "test_bucket_joery";
 			string objectName = @"upload/Pw3E8.csv";
 			string localPath = @"D:\TEST\sc_variable_csv\Pw3E8.csv";
-			string localUploadPath = @"C:\Users\Supei\Downloads\Script\Script\CRM_PPCG_LEAD_PROCESS.btq";
+			
 			//從資料流讀取
 			GoogleCredential credential = Google.Apis.Auth.OAuth2.GoogleCredential.FromJson(
 				System.IO.File.ReadAllText(@"D:\_WorkProject\TWM\112_Survey\01_DOC\rational-genius-400902-2e11dab77a87.json"));
@@ -96,9 +104,27 @@ namespace GCPAPI_TEST
 				using var outputFile = File.OpenRead(localPath);
 
 				client.UploadObject(bucketName, objectName, null, outputFile);
-				Console.WriteLine($"Downloaded {localPath} to {objectName}.");
+				Console.WriteLine($"Uploadloaded {localPath} to {objectName}.");
 
-				//client.UploadObject(bucketName, localUploadPath)
+			}
+		}
+
+		static void UpLoadFile2()
+		{
+			string bucketName = "test_bucket_joery";
+			string objectName = gcpPath;
+			string localPath = @"D:\TEST\unfinished_list_csv\eLGk6_20231107193807.csv";
+
+			//從資料流讀取
+			GoogleCredential credential = Google.Apis.Auth.OAuth2.GoogleCredential.FromJson(
+				System.IO.File.ReadAllText(@"D:\_WorkProject\TWM\112_Survey\01_DOC\rational-genius-400902-2e11dab77a87.json"));
+			using (StorageClient client = StorageClient.Create(credential))
+			{
+				using var outputFile = File.OpenRead(localPath);
+
+				client.UploadObject(bucketName, objectName, null, outputFile);
+				Console.WriteLine($"Uploadloaded {localPath} to {objectName}.");
+
 			}
 		}
 

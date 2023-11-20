@@ -20,6 +20,9 @@
     <None Update="GoogleCredential\rational-genius-400902-2e11dab77a87.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="GoogleCredential\surveycake-twm-1f6e0a95a707.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

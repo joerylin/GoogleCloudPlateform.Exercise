@@ -13,3 +13,4 @@ D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\obj\Debug\net6.0\
 D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\obj\Debug\net6.0\refint\GCP.SERVICE.dll
 D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\obj\Debug\net6.0\GCP.SERVICE.pdb
 D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\obj\Debug\net6.0\ref\GCP.SERVICE.dll
+D:\_Exercise\GoogleCloudPlateform.Exercise\TWM.CRM.GCP.SERVICE\bin\Debug\net6.0\GoogleCredential\surveycake-twm-1f6e0a95a707.json
