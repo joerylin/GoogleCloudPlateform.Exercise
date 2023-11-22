@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GCP.WpfApp.Exercise"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Activated="Window_Activated">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="143*"/>
+            <ColumnDefinition Width="17*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="buttonSearch" Content="Searching..." HorizontalAlignment="Left" Margin="130,107,0,0" VerticalAlignment="Top" Click="buttonSearch_Click"/>
+        <Label x:Name="LableKeyWork" Content="Keywork" HorizontalAlignment="Left" Margin="123,76,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TextKeyWord" HorizontalAlignment="Left" Margin="206,76,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="345" Height="26"/>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="66,155,57,47" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>
