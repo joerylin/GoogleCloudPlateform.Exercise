@@ -13,10 +13,13 @@ namespace GCPAPI_TEST
 		//static String bucketName = "test_bucket_joery";
 		//static String credentialPath = @"GoogleCredential\rational-genius-400902-2e11dab77a87.json";
 
+		//-- Reacky TEST 
+		//static String bucketName = "test_bucket_joery";
+		//static String credentialPath = @"GoogleCredential\rational-genius-400902-2e11dab77a87.json";
+
 		//-- TWM 
 		static String bucketName = "at-twm-svy-do-automation";
 		static String credentialPath = @"GoogleCredential\surveycake-twm-1f6e0a95a707.json";
-
 
 		static String gcpPath, localPath;
 		static GCPBase gcpService = new GoogleCloudStorageService();
@@ -24,35 +27,25 @@ namespace GCPAPI_TEST
 		static void Main(string[] args)
 		{
 			Console.WriteLine("TEST START");
-			//DownLoadFile_1();
-			//UpLoadFile2();
-			// gcpService = new GoogleCloudStorageService();
+
 			gcpService.SetGCPService(bucketName, credentialPath);
 			ConsoleWrite.ConsoleWriteTip("***** START... *****");
 
-			localPath = @"D:\TEST\unfinished_list_csv\";
+			localPath = @"D:\TEST\unfinished_list_csv\_Archived\";
 			gcpPath = @"automation/bs/storage/twm/unfinished_list/csv/";
 
+			//Push to GCP
+			//gcpService.PushFile($"{gcpPath}Joery_20231122100000.csv", $"{localPath}Joery_20231122100000.csv");
+			//gcpService.PushFile($"{gcpPath}Joery_20231122110000.csv", $"{localPath}Joery_20231122110000.csv");
+			//gcpService.PushFile($"{gcpPath}Joerz_20231122100000.csv", $"{localPath}Joerz_20231122100000.csv");
+			//gcpService.PushFile($"{gcpPath}Joerz_20231122110000.csv", $"{localPath}Joerz_20231122110000.csv");
+
+
+			//Pull from GCP
 			//gcpService.PullFile("automation/bs/storage/twm/unfinished_list/csv/test_20231116153322.jry", "D:\\TEST\\pull_from_gcp\\test_20231116153322.jry");
 
-			//gcpService.PushFile($"{gcpPath}LrWLP_20231115170533.csv", $"{localPath}LrWLP_20231115170533.csv");
-			//gcpService.PushFile($"{gcpPath}LrWLP_20231117094733.csv", $"{localPath}LrWLP_20231117094733.csv");
-			//gcpService.PushFile($"{gcpPath}LrWLP_20231117104733.csv", $"{localPath}LrWLP_20231117104733.csv");
 
-			//gcpService.PushFile($"{gcpPath}eLGk6_20231107193807.csv", $"{localPath}eLGk6_20231107193807.csv");
-			//gcpService.PushFile($"{gcpPath}eLGk6_20231107233807.csv", $"{localPath}eLGk6_20231107233807.csv");
-			// ListFile(gcpPath);
-			//TEST1();
-			//gcpPath = null;
-			List<Object> list = gcpService.GetResultObjects(gcpPath, "", "csv");
-			ConsoleWrite.ConsoleWriteTip($" 列出 \"\" 數量 = {list.Count}");
-			foreach (var item in list)
-			{
-				ConsoleWrite.ConsoleWriteInfo($" NAME={item.Name} \t  SIZE={item.Size}");
-
-				//下載
-				//gcpService.PullFile(item.Name, $"{localPath}{gcpService.getObjectFilename(item.Name)}");
-			}
+			ListAndDownLoad();
 
 
 			ConsoleWrite.ConsoleWriteTip("***** END ... *****");
@@ -128,6 +121,20 @@ namespace GCPAPI_TEST
 			}
 		}
 
+		static void ListAndDownLoad()
+		{
+			List<Object> list;
+			list = gcpService.GetResultObjects(gcpPath, "", "csv");
+			//list = gcpService.GetResultObjects($"{gcpPath}eLGk6_20231107233807.csv");
+			ConsoleWrite.ConsoleWriteTip($" 列出 \"\" 數量 = {list.Count}");
+			foreach (var item in list)
+			{
+				ConsoleWrite.WriteLine($" NAME={item.Name} \t  SIZE={item.Size}");
+
+				//下載
+				//gcpService.PullFile(item.Name, $"{localPath}{gcpService.getObjectFilename(item.Name)}");
+			}
+		}
 		public static void ListFile(String gcp_path)
 		{
 			//從資料流讀取

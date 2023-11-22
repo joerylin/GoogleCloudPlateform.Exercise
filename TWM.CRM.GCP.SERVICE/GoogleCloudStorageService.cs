@@ -53,10 +53,9 @@ namespace GCP.SERVICE
 		{
 			bool flag;
 			try
-			{
-				//StorageClient client = StorageClient.Create(base.Credential);
-				var obj = _client.GetObject(bucketName, gcp_path);
-				if (obj.Size > 0)
+			{				
+				var obj = this.GetResultObjects(gcp_path);
+				if (obj.Count > 0)
 					flag = true;
 				else
 					flag = false;

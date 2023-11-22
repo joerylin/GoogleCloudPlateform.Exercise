@@ -1,0 +1,4 @@
+/GoogleCredential/*.json
+bin
+obj
+.vs
