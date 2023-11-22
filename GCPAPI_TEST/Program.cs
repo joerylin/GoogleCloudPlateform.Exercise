@@ -14,12 +14,12 @@ namespace GCPAPI_TEST
 		//static String credentialPath = @"GoogleCredential\rational-genius-400902-2e11dab77a87.json";
 
 		//-- Reacky TEST 
-		//static String bucketName = "test_bucket_joery";
-		//static String credentialPath = @"GoogleCredential\rational-genius-400902-2e11dab77a87.json";
+		static String bucketName = "e-tec_test";
+		static String credentialPath = @"GoogleCredential\mytest-405908-efc1034d9512.json";
 
 		//-- TWM 
-		static String bucketName = "at-twm-svy-do-automation";
-		static String credentialPath = @"GoogleCredential\surveycake-twm-1f6e0a95a707.json";
+		//static String bucketName = "at-twm-svy-do-automation";
+		//static String credentialPath = @"GoogleCredential\surveycake-twm-1f6e0a95a707.json";
 
 		static String gcpPath, localPath;
 		static GCPBase gcpService = new GoogleCloudStorageService();
@@ -32,7 +32,7 @@ namespace GCPAPI_TEST
 			ConsoleWrite.ConsoleWriteTip("***** START... *****");
 
 			localPath = @"D:\TEST\unfinished_list_csv\_Archived\";
-			gcpPath = @"automation/bs/storage/twm/unfinished_list/csv/";
+			gcpPath = @"upload/";
 
 			//Push to GCP
 			//gcpService.PushFile($"{gcpPath}Joery_20231122100000.csv", $"{localPath}Joery_20231122100000.csv");
