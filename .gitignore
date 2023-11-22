@@ -1,4 +1,4 @@
-/GoogleCredential/*.json
-bin
-obj
-.vs
+GoogleCredential/*.json
+bin/
+obj/
+.vs/
