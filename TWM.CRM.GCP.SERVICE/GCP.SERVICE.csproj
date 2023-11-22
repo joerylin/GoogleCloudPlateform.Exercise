@@ -17,6 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="GoogleCredential\mytest-405908-efc1034d9512.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="GoogleCredential\rational-genius-400902-2e11dab77a87.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
