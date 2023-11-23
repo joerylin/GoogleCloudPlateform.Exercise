@@ -31,21 +31,21 @@ namespace GCPAPI_TEST
 			gcpService.SetGCPService(bucketName, credentialPath);
 			ConsoleWrite.ConsoleWriteTip("***** START... *****");
 
-			localPath = @"D:\TEST\unfinished_list_csv\_Archived\";
+			localPath = @"D:\TEST\unfinished_list_csv\";
 			gcpPath = @"upload/";
 
 			//Push to GCP
-			//gcpService.PushFile($"{gcpPath}Joery_20231122100000.csv", $"{localPath}Joery_20231122100000.csv");
+			gcpService.PushFile($"{gcpPath}Joery_20231122100000.csv", $"{localPath}Joery_20231122100000.csv");
 			//gcpService.PushFile($"{gcpPath}Joery_20231122110000.csv", $"{localPath}Joery_20231122110000.csv");
 			//gcpService.PushFile($"{gcpPath}Joerz_20231122100000.csv", $"{localPath}Joerz_20231122100000.csv");
-			//gcpService.PushFile($"{gcpPath}Joerz_20231122110000.csv", $"{localPath}Joerz_20231122110000.csv");
+			//gcpService.PushFile($"{gcpPath}Pw3E8_20231121145700.csv", $"{localPath}Pw3E8_20231121145700.csv");
 
 
 			//Pull from GCP
 			//gcpService.PullFile("automation/bs/storage/twm/unfinished_list/csv/test_20231116153322.jry", "D:\\TEST\\pull_from_gcp\\test_20231116153322.jry");
 
-
-			ListAndDownLoad();
+			ListAndDownLoad(gcpPath);
+			//ListAndDownLoad(gcpPath, @"D:\TEST\");
 
 
 			ConsoleWrite.ConsoleWriteTip("***** END ... *****");
@@ -121,10 +121,10 @@ namespace GCPAPI_TEST
 			}
 		}
 
-		static void ListAndDownLoad()
+		static void ListAndDownLoad(String m_gcp_path, String m_local_path=null, String m_extension = null)
 		{
 			List<Object> list;
-			list = gcpService.GetResultObjects(gcpPath, "", "csv");
+			list = gcpService.GetResultObjects(m_gcp_path, "", m_extension);
 			//list = gcpService.GetResultObjects($"{gcpPath}eLGk6_20231107233807.csv");
 			ConsoleWrite.ConsoleWriteTip($" 列出 \"\" 數量 = {list.Count}");
 			foreach (var item in list)
@@ -132,7 +132,8 @@ namespace GCPAPI_TEST
 				ConsoleWrite.WriteLine($" NAME={item.Name} \t  SIZE={item.Size}");
 
 				//下載
-				//gcpService.PullFile(item.Name, $"{localPath}{gcpService.getObjectFilename(item.Name)}");
+				if(!String.IsNullOrEmpty(m_local_path))
+					gcpService.PullFile(item.Name, $"{m_local_path}{gcpService.getObjectFilename(item.Name)}");
 			}
 		}
 		public static void ListFile(String gcp_path)

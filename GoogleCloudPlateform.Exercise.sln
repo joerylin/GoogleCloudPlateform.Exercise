@@ -14,7 +14,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DLL", "DLL", "{C3227568-4B4
 		DLL\GCP.SERVICE.deps.json = DLL\GCP.SERVICE.deps.json
 		DLL\GCP.SERVICE.dll = DLL\GCP.SERVICE.dll
 		DLL\GCP.SERVICE.pdb = DLL\GCP.SERVICE.pdb
-		DLL\GoogleCredential\mytest-405908-efc1034d9512.json = DLL\GoogleCredential\mytest-405908-efc1034d9512.json
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GCP.WpfApp.Exercise", "GCP.WpfApp.Exercise\GCP.WpfApp.Exercise.csproj", "{23F44F06-3730-43A7-9682-D78016782019}"

@@ -11,10 +11,25 @@
             <ColumnDefinition Width="143*"/>
             <ColumnDefinition Width="17*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="buttonSearch" Content="Searching..." HorizontalAlignment="Left" Margin="130,107,0,0" VerticalAlignment="Top" Click="buttonSearch_Click"/>
+        <Button x:Name="buttonSearch" Content="Searching..." HorizontalAlignment="Left" Margin="584,79,0,0" VerticalAlignment="Top" Click="buttonSearch_Click"/>
+        <Button x:Name="buttonUpload" Content="Upload..." HorizontalAlignment="Left" Margin="206,119,0,0" VerticalAlignment="Top" Click="buttonUpload_Click" />
+        <Button x:Name="buttonDownload" Content="Download..." HorizontalAlignment="Left" Margin="286,119,0,0" VerticalAlignment="Top" Click="buttonDownload_Click"  />
+        <Button x:Name="buttonDelete" Content="Delete..." HorizontalAlignment="Left" Margin="391,119,0,0" VerticalAlignment="Top"  />
         <Label x:Name="LableKeyWork" Content="Keywork" HorizontalAlignment="Left" Margin="123,76,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextKeyWord" HorizontalAlignment="Left" Margin="206,76,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="345" Height="26"/>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="66,155,57,47" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="TextKeyWord" HorizontalAlignment="Left" Margin="206,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="345" Height="26"/>
+        <DataGrid x:Name="DataGridResult" Margin="66,155,57,47" Grid.ColumnSpan="2" AutoGenerateColumns="False" SelectionChanged="DataGridResult_SelectionChanged" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Bucket Name" Binding="{Binding Bucket}" />
+                <DataGridTextColumn Header="Content Type" Binding="{Binding ContentType}" />
+                <DataGridTextColumn Header="Name " Binding="{Binding Name}" />
+                <DataGridHyperlinkColumn Header="DownLoad" Binding="{Binding Name}"   >
+                                                                                                                                      
+                </DataGridHyperlinkColumn>
+                <DataGridHyperlinkColumn Header="Delete"  ></DataGridHyperlinkColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
 
     </Grid>
 </Window>

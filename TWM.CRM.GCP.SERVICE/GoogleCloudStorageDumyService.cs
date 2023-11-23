@@ -37,7 +37,13 @@ namespace GCP.SERVICE
 			return File.Exists(gcp_path);
 		}
 
-		public override List<Object> GetResultObjects(string gcp_path, string prefix = null, string extension = null)
+		public override void DeleteFile(string gcp_path)
+		{
+			_client.DeleteObject(bucketName, gcp_path);
+			Console.WriteLine($"Deleted object {gcp_path}.");
+		}
+
+		public override List<Object> GetResultObjects(string gcp_path, string prefix = null, string extension = null, Boolean search_sub_dir_ind = false)
 		{
 			throw new NotImplementedException();
 		}

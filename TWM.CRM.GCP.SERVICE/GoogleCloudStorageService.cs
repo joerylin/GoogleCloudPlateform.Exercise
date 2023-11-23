@@ -38,10 +38,18 @@ namespace GCP.SERVICE
 		/// <param name="local_path">本地端路徑檔案的路徑</param>
 		public override void PushFile(string gcp_path, string local_path)
 		{
-			//using StorageClient client = StorageClient.Create(base.Credential);
 			using var file = File.OpenRead(local_path);
 			_client.UploadObject(bucketName, gcp_path, null, file);
 			Console.WriteLine($"Upload {local_path} to GCP:{gcp_path}");
+		}
+
+		/// <summary>
+		///  刪除檔案
+		/// <param name="gcp_path">Google Cloud Storage buckets下檔案的路徑</param>
+		public override void DeleteFile(string gcp_path)
+		{
+			_client.DeleteObject(bucketName, gcp_path);
+			Console.WriteLine($"Deleted object {gcp_path}.");
 		}
 
 		/// <summary>
@@ -53,7 +61,7 @@ namespace GCP.SERVICE
 		{
 			bool flag;
 			try
-			{				
+			{
 				var obj = this.GetResultObjects(gcp_path);
 				if (obj.Count > 0)
 					flag = true;
@@ -76,7 +84,7 @@ namespace GCP.SERVICE
 		/// <param name="prefix">前綴字</param>
 		/// <param name="extension">附檔名eg.   : csv</param>
 		/// <returns>物件集合LIST</returns>
-		public override List<Object> GetResultObjects(string gcp_path, string prefix = null, string extension = null)
+		public override List<Object> GetResultObjects(string gcp_path, string prefix = null, string extension = null, Boolean search_sub_dir_ind = false)
 		{
 			List<Object> objects = new();
 			if (string.IsNullOrEmpty(extension))
@@ -84,7 +92,12 @@ namespace GCP.SERVICE
 			else
 				extension = $"**.{extension.ToLower()}";
 
-			ListObjectsOptions options = new ListObjectsOptions() { Delimiter = "/", MatchGlob = extension };
+			ListObjectsOptions options = new  ListObjectsOptions() {Delimiter = "/", MatchGlob = extension };
+			//if (search_sub_dir_ind)
+			//	options = new ListObjectsOptions() {MatchGlob = extension };
+			//else
+			//	options = new ListObjectsOptions() { Delimiter = "/", MatchGlob = extension };
+
 			if (string.IsNullOrEmpty(prefix))
 				objects = _client.ListObjects(bucketName, gcp_path, options).ToList();
 			else

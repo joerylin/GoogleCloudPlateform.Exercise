@@ -55,8 +55,13 @@ namespace GCP.SERVICE
 		/// </summary>
 		/// <param name="gcp_path">Google Cloud Storage buckets下檔案的路徑</param>
 		/// <returns></returns>
-
 		public abstract bool ExistsFile(string gcp_path);
+
+
+		/// <summary>
+		///  刪除檔案
+		/// <param name="gcp_path">Google Cloud Storage buckets下檔案的路徑</param>
+		public abstract void DeleteFile(string gcp_path);
 
 		/// <summary>
 		/// 列出 Google Cloud Storage bucket內的物件檔案清單
@@ -65,7 +70,7 @@ namespace GCP.SERVICE
 		/// <param name="prefix">前綴字</param>
 		/// <param name="extension">附檔名eg.   : csv</param>
 		/// <returns>物件集合LIST</returns>
-		public abstract List<Object> GetResultObjects(string gcp_path, string prefix = null, string extension = null);
+		public abstract List<Object> GetResultObjects(string gcp_path, string prefix = null, string extension = null, Boolean search_sub_dir_ind = false);
 
 
 		~GCPBase()
