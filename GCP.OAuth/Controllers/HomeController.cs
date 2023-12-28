@@ -54,6 +54,8 @@ namespace GCP.OAuth.Controllers
                 ViewData["Msg"] += "Email:" + payload.Email + "<br>";
                 ViewData["Msg"] += "Name:" + payload.Name + "<br>";
                 ViewData["Msg"] += "Picture:" + payload.Picture;
+
+                ViewData["Picture"] = payload.Picture;
             }
 
             return View();

@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Login User";
+}
+@Html.BeginForm("ValidLogin", "Login", FormMethod.Post)
+
+
+<script src="https://accounts.google.com/gsi/client" async></script>
+<div id="g_id_onload"
+     data-client_id="215323063064-u3om7e3k6o8hrihq5pdqrgak1gjq4nkn.apps.googleusercontent.com"
+     data-login_uri="https://localhost:44314/Home/ValidGoogleLogin"
+     data-auto_prompt="false">
+</div>
+<div class="g_id_signin"
+     data-type="standard"
+     data-size="large"
+     data-theme="outline"
+     data-text="sign_in_with"
+     data-shape="rectangular"
+     data-logo_alignment="left">
+</div>
