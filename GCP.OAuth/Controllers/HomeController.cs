@@ -66,7 +66,7 @@ namespace GCP.OAuth.Controllers
         /// <param name="formToken"></param>
         /// <param name="cookiesToken"></param>
         /// <returns></returns>
-        public async Task<GoogleJsonWebSignature.Payload?> VerifyGoogleToken(string? formCredential, string? formToken, string? cookiesToken)
+        private async Task<GoogleJsonWebSignature.Payload?> VerifyGoogleToken(string? formCredential, string? formToken, string? cookiesToken)
         {
             // ÀË¬dªÅ­È
             if (formCredential == null || formToken == null && cookiesToken == null)
