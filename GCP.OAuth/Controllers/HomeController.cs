@@ -1,6 +1,7 @@
 using GCP.OAuth.Models;
 using Google.Apis.Auth;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Diagnostics;
 
 namespace GCP.OAuth.Controllers
@@ -8,11 +9,14 @@ namespace GCP.OAuth.Controllers
 	public class HomeController : Controller
 	{
 		private readonly ILogger<HomeController> _logger;
+        private readonly MyTestDBContext _dbContext;
 
-		public HomeController(ILogger<HomeController> logger)
+		public HomeController(ILogger<HomeController> logger, MyTestDBContext context)
 		{
 			_logger = logger;
-		}
+            _dbContext = context;
+
+        }
 
 		public IActionResult Index()
 		{
@@ -24,7 +28,20 @@ namespace GCP.OAuth.Controllers
 			return View();
 		}
 
-		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult MyFormDemo()
+        {
+            var query = this._dbContext.Sales.AsQueryable();
+            return View(query);
+        }
+        public IActionResult Query()
+        {                                                                    
+
+            QueryOut outModel = new QueryOut();
+            outModel.grids = new List<Sale>();
+            return Json(outModel);  
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()
 		{
 			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

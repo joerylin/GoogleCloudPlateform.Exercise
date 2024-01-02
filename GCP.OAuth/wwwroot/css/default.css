@@ -1,0 +1,65 @@
+#app{
+    background-color: lightgreen;
+    font-family: '微軟正黑體', Times, serif;
+}
+
+
+table tr th{
+    border:5rem;
+    padding: 0.26rem;
+    font-style:italic;    
+    font-family: '王漢宗綜藝體繁', '微軟正黑體', Times, serif;
+    color: blue;
+    background-color: aqua;
+
+}
+table tr td{
+    border:5rem; 
+    font-family:'微軟正黑體', Times, serif;
+    background-color:azure;
+}
+table tr td.td1{
+    border:5rem; 
+    font-family:'微軟正黑體', Times, serif;
+    background-color:azure;
+}
+table tr td.td2{
+    border:5rem; 
+    font-family:'微軟正黑體', Times, serif;
+    background-color:antiquewhite;
+}
+
+select{
+    width: 250px;
+}
+
+.item-width{
+    width: 250px;
+}
+
+.item-pic{
+    width: 24px;
+    height: 24px;
+    text-align: center;
+}
+.font-green{
+    color: green; 
+    background-color:lightpink;   
+}
+.font-blue{
+    color: blue;    
+    background-color:lightpink;
+}
+
+.font-red
+{
+    color: red;
+    background-color:lightpink;
+}
+.over15 {
+    border: red solid 1px;
+    color: red;
+}
+.request{
+    color: red; 
+}

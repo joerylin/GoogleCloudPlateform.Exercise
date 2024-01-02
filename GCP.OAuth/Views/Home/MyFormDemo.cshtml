@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "小試身手-表單CRUD";
+}
+
+@model IEnumerable<GCP.OAuth.Models.Sale>
+
+<h1>@ViewData["Title"]</h1>
+
+<div id="app">
+    <div class="card">
+        <div class="card-header">
+            動態列表及修改教學
+        </div>
+        <div class="card-body">
+            <button type="button" class="btn btn-primary" v-on:click="Query()">載入資料</button> &nbsp;
+            <button type="button" class="btn btn-primary">更新至資料庫</button>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th style="width: 30px;text-align:center;"></th>
+                        <th>姓名</th>
+                        <th>項目</th>
+                        <th>數量</th>
+                        <th>金額</th>
+                        <th>日期</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item, index) in grid.list">
+                        <td><a style="cursor: pointer;">刪</a></td>
+                        <td><input type="text" v-bind:id="'Grid_Name_' + index" v-model="grid.list[index].name" /></td>
+                        <td><input type="text" v-bind:id="'Grid_Item_' + index" v-model="grid.list[index].item" /></td>
+                        <td><input type="text" v-bind:id="'Grid_Qty_' + index" v-model="grid.list[index].qty" /></td>
+                        <td><input type="text" v-bind:id="'Grid_Amount_' + index" v-model="grid.list[index].amount" /></td>
+                        <td><input type="text" v-bind:id="'Grid_Date_' + index" v-model="grid.list[index].date" /></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+@section scripts {
+    <script>
+        import axios from 'axios';
+        const app = Vue.createApp({
+            data() {
+                return {
+                    grid: {
+                        list: []
+                    }
+                }
+            }
+            , methods: {
+                //載入資料
+                Query() {
+                    var self = this;
+
+                    // 組合表單資料
+                    var postData = {};
+
+                    // 使用 jQuery Ajax 傳送至後端
+                    axios.post({
+                        url: '@Url.Content("~/Home/Query")',
+                        method: 'POST',
+                        dataType: 'json',
+                        data: { inModel: postData },
+                        success: function (datas) {
+                            // 綁定列表
+                            self.grid.list = datas.grids;
+                        },
+                        error: function (err) {
+                            alert(err.status + " " + err.statusText + '\n' + err.responseText);
+                        }
+                    });
+                }
+            }
+        });
+        const vm = app.mount('#app');
+    </script>
+}
+
+<table id="memberlist" class="table table-bordered">
+    <thead>
+        <tr>
+            <td>SEQ</td>
+            <td>Name</td>
+            <td>Item</td>
+            <td>Qty</td>
+            <td>Amount</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Pk</td>
+                <td>@item.Name</td>
+                <td>@item.Item</td>
+                <td>@item.Qty</td>
+                <td>@item.Amount</td>
+            </tr>
+        }
+    </tbody>
+</table>
